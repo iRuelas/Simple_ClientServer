@@ -3,9 +3,9 @@ public class TestServer {
         Servidor servidor = new Servidor(9001);
         String msj = servidor.mensajeEntrante();
         ReadFile readFile = new ReadFile();
-        if(msj.compareTo("readFile")==0){
+        if (msj.compareTo("readFile") == 0) {
             readFile.readFile();
-        }else {
+        } else {
             System.out.println(msj);
         }
     }

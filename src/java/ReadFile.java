@@ -1,10 +1,7 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 
-public class ReadFile {
-    public void readFile() {
+class ReadFile {
+    void readFile() {
         String path = getClass().getResource("Texto.txt").getPath();
         String line;
         File file = new File(path);
@@ -13,8 +10,10 @@ public class ReadFile {
         try {
             fr = new FileReader(file);
             br = new BufferedReader(fr);
-
-        } catch (FileNotFoundException e) {
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
